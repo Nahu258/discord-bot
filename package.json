@@ -1,0 +1,26 @@
+{
+  "name": "nft-bot",
+  "version": "1.0.0",
+  "description": "A bot that show prices of Degen DAO Ape Club collection",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "nft",
+    "solana",
+    "bot",
+    "discord"
+  ],
+  "author": "Nahuel Villegas <nahugc258@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "dotenv": "^16.0.0"
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "discord.js": "^13.6.0",
+    "express": "^4.17.3"
+  }
+}
