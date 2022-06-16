@@ -36,13 +36,10 @@ const getStats = async () => {
 }
 
 const setCounter = () => {
-  const date = new Date();
-  const today = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(),
-                date.getUTCDate(), date.getUTCHours(),
-                date.getUTCMinutes(), date.getUTCSeconds());
+  const date = Date();
   // const arrive = new Date("Fri Jul 1 2022 07:10:00 UTC-0300").toUTCString()
   client.user.setPresence({
-    activities: [{name: `:${new Date(today)} ◎`,type: 'WATCHING'}],
+    activities: [{name: `${date}`,type: 'WATCHING'}],
     status: 'dnd'
   })
 }
