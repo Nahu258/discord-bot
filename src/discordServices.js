@@ -35,8 +35,18 @@ const getStats = async () => {
   return data
 }
 
+const setCounter = () => {
+  const today = new Date();
+  client.user.setPresence({
+    activities: [{name: `Hours: ${time} ◎`,type: 'WATCHING'}],
+    status: 'dnd'
+  })
+}
+
 client.on('ready', () => {
-  setInterval(() => setStats(), 60000);
+  // setInterval(() => setStats(), 60000);
+  // setInterval(() => setCounter(), 3600000);
+  setInterval(() => setCounter(), 30000);
 })
 
 module.exports = { client }
