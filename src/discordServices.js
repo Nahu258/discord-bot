@@ -36,10 +36,33 @@ const getStats = async () => {
 }
 
 const setCounter = () => {
-  const date = Date();
-  // const arrive = new Date("Fri Jul 1 2022 07:10:00 UTC-0300").toUTCString()
+  // 
+  const date = new Date()
+
+  var day = date.getDate()
+  const hour = date.getHours()-3
+  const minute = date.getMinutes()
+  const arriveDay = 31
+  const arriveHour = 7
+  const arriveMinute = 10
+
+  var diasRestantes = 0
+  var horasRestantes = 0
+  while(day < arriveDay){
+      diasRestantes++
+      day++
+      horasRestantes = diasRestantes * 24
+  }
+  if(hour > arriveHour){
+      diasRestantes --
+      if(arriveMinute<minute){
+          horasRestantes-=1
+      }
+      horasRestantes -= (hour - arriveHour)
+  }
+  // 
   client.user.setPresence({
-    activities: [{name: `${date}`,type: 'WATCHING'}],
+    activities: [{name: `${horasRestantes}`,type: 'WATCHING'}],
     status: 'dnd'
   })
 }
