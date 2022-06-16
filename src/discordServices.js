@@ -38,7 +38,7 @@ const getStats = async () => {
 const setCounter = () => {
   const today = new Date();
   client.user.setPresence({
-    activities: [{name: `Hours: ${time} ◎`,type: 'WATCHING'}],
+    activities: [{name: `Hours: ${today} ◎`,type: 'WATCHING'}],
     status: 'dnd'
   })
 }
