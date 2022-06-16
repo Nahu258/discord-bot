@@ -66,7 +66,7 @@ const setCounter = () => {
   }
   // 
   client.user.setPresence({
-    activities: [{name: `${horasRestantes}`,type: 'WATCHING'}],
+    activities: [{name: `${horasRestantes}:${minutesLeft}`,type: 'WATCHING'}],
     status: 'dnd'
   })
 }
