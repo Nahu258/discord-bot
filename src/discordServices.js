@@ -53,10 +53,14 @@ const setCounter = () => {
       day++
       horasRestantes = diasRestantes * 24
   }
+  var minutesLeft = 0
   if(hour > arriveHour){
       diasRestantes --
       if(arriveMinute<minute){
           horasRestantes-=1
+          minutesLeft = 60 - (minute - arriveMinute)
+      }else {
+          minutesLeft = (arriveMinute - minute)
       }
       horasRestantes -= (hour - arriveHour)
   }
