@@ -37,8 +37,9 @@ const getStats = async () => {
 
 const setCounter = () => {
   const today = new Date();
+  const arrive = new Date("Fri Jul 1 2022 07:10:00 GMT-0300").toUTCString()
   client.user.setPresence({
-    activities: [{name: `Hours: ${today} ◎`,type: 'WATCHING'}],
+    activities: [{name: `Hours: ${arrive} ◎`,type: 'WATCHING'}],
     status: 'dnd'
   })
 }
