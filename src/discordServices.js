@@ -40,11 +40,15 @@ const setCounter = () => {
   const date = new Date()
 
   var day = date.getDate()
-  const hour = date.getHours()-3
+  var hour = date.getHours()-3
   const minute = date.getMinutes()
   const arriveDay = 31
   const arriveHour = 7
   const arriveMinute = 10
+
+  if(date.getHours() === 0 || date.getHours() === 1 || date.getHours() === 2 ){
+    hour += 24
+  }
 
   var diasRestantes = 0
   var horasRestantes = 0
@@ -63,7 +67,15 @@ const setCounter = () => {
           minutesLeft = (arriveMinute - minute)
       }
       horasRestantes -= (hour - arriveHour)
-  }
+  } else {
+    horasRestantes += arriveHour - hour
+    if(arriveMinute<minute){
+        horasRestantes-=1
+        minutesLeft = 60 - (minute - arriveMinute)
+    }else {
+        minutesLeft = (arriveMinute - minute)
+    }
+}
   // 
   client.user.setPresence({
     // activities: [{name: `${horasRestantes}:${minutesLeft}`,type: 'WATCHING'}],
