@@ -38,7 +38,6 @@ const getStats = async () => {
 const setCounter = () => {
   // 
   const date = new Date()
-
   var day = date.getDate()
   var hour = date.getHours()-3
   const minute = date.getMinutes()
@@ -87,7 +86,7 @@ const setCounter = () => {
 client.on('ready', () => {
   // setInterval(() => setStats(), 60000);
   // setInterval(() => setCounter(), 3600000);
-  setInterval(() => setCounter(), 1000);
+  setInterval(() => setCounter(), 10000);
 })
 
 module.exports = { client }
