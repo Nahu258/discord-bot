@@ -85,9 +85,14 @@ const setCounter = () => {
 }
 
 client.on('ready', () => {
+  const date = new Date()
+  const seconds = date.getSeconds()
   // setInterval(() => setStats(), 60000);
   // setInterval(() => setCounter(), 3600000);
-  setInterval(() => setCounter(), 30000);
+  if (seconds === 0) {
+    setCounter()
+  }
+  // setInterval(() => setCounter(), seconds);
 })
 
 module.exports = { client }
