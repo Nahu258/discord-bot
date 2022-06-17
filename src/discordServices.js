@@ -87,7 +87,7 @@ const setCounter = () => {
 client.on('ready', () => {
   // setInterval(() => setStats(), 60000);
   // setInterval(() => setCounter(), 3600000);
-  setInterval(() => setCounter(), 30000);
+  setInterval(() => setCounter(), 1000);
 })
 
 module.exports = { client }
