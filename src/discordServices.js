@@ -36,7 +36,6 @@ const getStats = async () => {
 }
 
 const setCounter = () => {
-  // 
   const date = new Date()
   var day = date.getDate()
   var hour = date.getHours()-3
@@ -75,10 +74,9 @@ const setCounter = () => {
         minutesLeft = (arriveMinute - minute)
     }
 }
-  // 
   client.user.setPresence({
-    activities: [{name: `${horasRestantes}:${minutesLeft}`,type: 'WATCHING'}],
-    // activities: [{name: `TODO MAL`,type: 'WATCHING'}],
+    // activities: [{name: `${horasRestantes}:${minutesLeft}`,type: 'WATCHING'}],
+    activities: [{name: `TODO MAL`,type: 'WATCHING'}],
     status: 'dnd'
   })
 }
