@@ -47,6 +47,9 @@ const setCounter = () => {
   if(date.getHours() === 0 || date.getHours() === 1 || date.getHours() === 2 ){
     hour += 24
   }
+  if(hour === 21 || hour === 22 ||hour === 23){
+    day = day - 1
+}
 
   var diasRestantes = 0
   var horasRestantes = 0
@@ -75,8 +78,8 @@ const setCounter = () => {
     }
 }
   client.user.setPresence({
-    // activities: [{name: `${horasRestantes}:${minutesLeft}`,type: 'WATCHING'}],
-    activities: [{name: `TODO MAL`,type: 'WATCHING'}],
+    activities: [{name: `${horasRestantes}:${minutesLeft}`,type: 'WATCHING'}],
+    // activities: [{name: `TODO MAL`,type: 'WATCHING'}],
     status: 'dnd'
   })
 }
